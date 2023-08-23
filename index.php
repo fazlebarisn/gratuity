@@ -1,14 +1,14 @@
 <?php
 /** 
-* main template file
+* Header template file
 * @package gratuity
 */
-
 ?>
-<div id="primary">
-    <h1>Main contant</h1>
-</div>
 
-<?php 
+<?php get_header(); ?>
+
+  <h1>main content</h1>
+
+<?php get_footer(); ?>
 
 
