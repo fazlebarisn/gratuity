@@ -20,8 +20,8 @@ if( !function_exists('dd') ){
 if ( ! defined( 'GRATUITY_DIR_PATH' ) ) {
 	define( 'GRATUITY_DIR_PATH', untrailingslashit( get_template_directory() ) );
 }
-if ( ! defined( 'HADUDU_LIB_DIR_URI' ) ) {
-	define( 'HADUDU_LIB_DIR_URI', untrailingslashit( get_template_directory_uri() ) . '/assets/src/library' );
+if ( ! defined( 'GRATUITY_ASSETS_DIR_URI' ) ) {
+	define( 'GRATUITY_ASSETS_DIR_URI', untrailingslashit( get_template_directory_uri() ) . '/assets' );
 }
 
 if ( ! defined( 'HADUDU_BUILD_URI' ) ) {
@@ -48,8 +48,8 @@ if ( ! defined( 'HADUDU_BUILD_CSS_URI' ) ) {
 	define( 'HADUDU_BUILD_CSS_URI', untrailingslashit( get_template_directory_uri() ) . '/assets/build/css' );
 }
 
-if ( ! defined( 'HADUDU_BUILD_CSS_DIR_PATH' ) ) {
-	define( 'HADUDU_BUILD_CSS_DIR_PATH', untrailingslashit( get_template_directory() ) . '/assets/build/css' );
+if ( ! defined( 'GRATUITY_CSS_DIR_PATH' ) ) {
+	define( 'GRATUITY_CSS_DIR_PATH', untrailingslashit( get_template_directory() ) . '/assets/css' );
 }
 
 require_once GRATUITY_DIR_PATH . '/inc/helpers/autoloader.php';

@@ -15,7 +15,7 @@ class GRATUITY{
 
 	protected function __construct() {
 		// load class.
-		// Assets::get_instance();
+		Assets::get_instance();
 
 
 		$this->setup_hooks();
