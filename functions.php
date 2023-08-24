@@ -63,7 +63,7 @@ if ( ! defined( 'HADUDU_BUILD_CSS_URI' ) ) {
 
 
 require_once GRATUITY_DIR_PATH . '/inc/helpers/autoloader.php';
-// require_once GRATUITY_DIR_PATH . '/inc/helpers/template-tag.php';
+require_once GRATUITY_DIR_PATH . '/inc/helpers/template-tag.php';
 
 function gratuity_get_theme_instance() {
 	\GRATUITY\Inc\GRATUITY::get_instance();
