@@ -25,10 +25,10 @@ class Assets{
 
 	public function registerStyles(){
 		// Register Syle
-		wp_register_style('bootstrap', GRATUITY_ASSETS_DIR_URI . '/css/bootstrap.min.css', [], false, 'all');
+		wp_register_style('bootstrap', GRATUITY_ASSETS_DIR_URI . '/vendor/bootstrap/css/bootstrap.min.css', [], false, 'all');
 		// wp_register_style( 'slick', HADUDU_LIB_DIR_URI . '/css/slick.css', [], false, 'all' );
 		// wp_register_style( 'slick-theme', HADUDU_LIB_DIR_URI . '/css/slick-theme.css', ['slick'], false, 'all' );
-		wp_register_style( 'main', GRATUITY_ASSETS_DIR_URI . '/css/main.css', ['bootstrap'], filemtime( GRATUITY_CSS_DIR_PATH . '/main.css' ), 'all' );
+		wp_register_style( 'main', GRATUITY_ASSETS_DIR_URI . '/css/style.css', ['bootstrap'], filemtime( GRATUITY_CSS_DIR_PATH . '/main.css' ), 'all' );
 
 		// Enqueue Style
 		wp_enqueue_style('bootstrap');
