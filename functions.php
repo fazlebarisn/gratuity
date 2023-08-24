@@ -4,22 +4,30 @@
 * @package gratuity
 */
 
-if( !function_exists('dd') ){
-	function dd( $val, $bool = false ){
-		echo "<pre>";
-			if($bool){
+/**
+ * Only for developer
+ * @author Fazle Bari <fazlebarisn@gmail.com>
+ */
+if( ! function_exists('dd') ){
+	function dd( ...$vals){
+		if( ! empty($vals) && is_array($vals) ){
+			foreach($vals as $val ){
+				echo "<pre>";
 				var_dump($val);
-				wp_die();
-			}else{
-				var_dump($val);
+				echo "</pre>";
 			}
-		echo "</pre>";
+		}
 	}
 }
 
 if ( ! defined( 'GRATUITY_DIR_PATH' ) ) {
 	define( 'GRATUITY_DIR_PATH', untrailingslashit( get_template_directory() ) );
 }
+
+if ( ! defined( 'GRATUITY_CSS_DIR_PATH' ) ) {
+	define( 'GRATUITY_CSS_DIR_PATH', untrailingslashit( get_template_directory() ) . '/assets/css' );
+}
+
 if ( ! defined( 'GRATUITY_ASSETS_DIR_URI' ) ) {
 	define( 'GRATUITY_ASSETS_DIR_URI', untrailingslashit( get_template_directory_uri() ) . '/assets' );
 }
@@ -48,9 +56,7 @@ if ( ! defined( 'HADUDU_BUILD_CSS_URI' ) ) {
 	define( 'HADUDU_BUILD_CSS_URI', untrailingslashit( get_template_directory_uri() ) . '/assets/build/css' );
 }
 
-if ( ! defined( 'GRATUITY_CSS_DIR_PATH' ) ) {
-	define( 'GRATUITY_CSS_DIR_PATH', untrailingslashit( get_template_directory() ) . '/assets/css' );
-}
+
 
 require_once GRATUITY_DIR_PATH . '/inc/helpers/autoloader.php';
 // require_once GRATUITY_DIR_PATH . '/inc/helpers/template-tag.php';
