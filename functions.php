@@ -28,6 +28,10 @@ if ( ! defined( 'GRATUITY_CSS_DIR_PATH' ) ) {
 	define( 'GRATUITY_CSS_DIR_PATH', untrailingslashit( get_template_directory() ) . '/assets/css' );
 }
 
+if ( ! defined( 'GRATUITY_JS_DIR_PATH' ) ) {
+	define( 'GRATUITY_JS_DIR_PATH', untrailingslashit( get_template_directory() ) . '/assets/js' );
+}
+
 if ( ! defined( 'GRATUITY_ASSETS_DIR_URI' ) ) {
 	define( 'GRATUITY_ASSETS_DIR_URI', untrailingslashit( get_template_directory_uri() ) . '/assets' );
 }

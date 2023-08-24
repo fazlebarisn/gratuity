@@ -41,13 +41,13 @@ class Assets{
 	public function registerScripts(){
 		// Register Scripts
 		// wp_register_script( 'slick', HADUDU_LIB_DIR_URI . '/js/slick.min.js', ['jquery'], false, true );
-		// wp_register_script( 'main', HADUDU_BUILD_JS_URI . '/main.js', ['jquery','slick'], filemtime( HADUDU_BUILD_JS_DIR_PATH . '/main.js'), true );
+		wp_register_script( 'main', GRATUITY_ASSETS_DIR_URI . '/js/main.js', ['jquery'], filemtime( GRATUITY_JS_DIR_PATH . '/main.js'), true );
 		// wp_register_script( 'bootstrap', HADUDU_LIB_DIR_URI . '/js/bootstrap.min.js', ['jquery'], false, true );
 
 		// // Enqueue Script
 		// wp_enqueue_script('slick');
 		// wp_enqueue_script('bootstrap');
-		// wp_enqueue_script('main');
+		wp_enqueue_script('main');
 
 	}
 
