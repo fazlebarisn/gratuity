@@ -33,8 +33,15 @@
     <div class="container d-flex align-items-center">
       <!-- <h1 class="logo me-auto"><a href="index.html">Presento<span>.</span></a></h1> -->
       <?php
-        if ( function_exists( 'the_custom_logo' ) ) {
+        $site_logo = get_theme_mod('custom_logo');
+        $home_page = esc_url(get_home_url());
+
+        if ( function_exists( 'the_custom_logo' ) && $site_logo ) {
+          // Display the logo if it's set
           the_custom_logo();
+        }else{
+          // Display the site title if no logo is set
+          echo '<h1 class="logo me-auto"> <a href="'. $home_page .'">' . esc_html(get_bloginfo('name')) . '</a></h1>';
         }
       ?>
       <!-- Uncomment below if you prefer to use an image logo -->
