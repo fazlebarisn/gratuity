@@ -29,5 +29,5 @@ if( $has_post_thumbnail ){
 ?>
 
 <h2 class="entry-title">
-  <a href="<?php echo esc_url( get_the_permalink() ) ?>"><?php echo get_the_title(); ?></a>
+  <a href="<?php echo esc_url( get_permalink() ) ?>"><?php echo get_the_title(); ?></a>
 </h2>
