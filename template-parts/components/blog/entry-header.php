@@ -15,7 +15,7 @@ if( $has_post_thumbnail ){
       <?php
       the_post_custom_thumbnail(
         $the_post_id,
-        'full',
+        'large',
         [
           'sizes' => '(max-width: 356px) 356px, 237px',
           'class' => 'img-fluid'
