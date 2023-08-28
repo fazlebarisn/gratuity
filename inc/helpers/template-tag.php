@@ -137,6 +137,7 @@ function gratuity_excerpt_more( $more = '' ){
 
 /**
  * For pagination
+ * Not as template, need to work leater
  */
 function gratuity_pagination(){
 
@@ -152,8 +153,22 @@ function gratuity_pagination(){
 
     $args = [
         'before_page_number' => '<span class="btn border border-secondary mr-2 mb-2">',
-        'after_page_number' => '</span>'
+        'after_page_number' => '</span>',
+        'prev_next'         => false,
     ];
     
     printf('<nav class="hadudu-pagination clearfix">%s</nav>', wp_kses( paginate_links($args), $allowed_tags ));
 }
+
+
+/** 
+ * Template original markup
+ *
+<div class="blog-pagination">
+<ul class="justify-content-center">
+  <li><a href="#">1</a></li>
+  <li class="active"><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+</ul>
+</div>
+*/
