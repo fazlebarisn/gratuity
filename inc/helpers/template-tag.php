@@ -81,9 +81,9 @@ function gratuity_post_on(){
 function gratuity_posted_by(){
     $byline = sprintf(
         esc_html_x( '%s', 'post author', 'gratuity' ),
-        '<li class="d-flex align-items-center"><i class="bi bi-person"></i><a href="'. esc_url( get_author_posts_url( get_the_author_meta('ID')) ) .'">' . esc_html( get_the_author() ) . '</a></li>'
+        '<a href="'. esc_url( get_author_posts_url( get_the_author_meta('ID')) ) .'">' . esc_html( get_the_author() ) . '</a>'
     );
-    echo $byline;
+    echo '<li class="d-flex align-items-center"><i class="bi bi-person"></i>' .$byline . '</li>';
 }
 
 function gratuity_post_comment(){
@@ -127,7 +127,7 @@ function gratuity_the_excerpt( $trim_character_count = 0 ){
 function gratuity_excerpt_more( $more = '' ){
     if( ! is_single() ){
         $more = sprintf(
-            '<a class="hadudu-read-more text-white" href="%1$s"><button class="mt-2 btn btn-info">%2$s</button></a>',
+            '<div class="read-more"><a href="%1$s">%2$s</a></div>',
             get_permalink( get_the_ID() ),
             __('Read More', 'hadudu'),
         );
