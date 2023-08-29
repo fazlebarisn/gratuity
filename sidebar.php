@@ -30,7 +30,7 @@
   </div><!-- End sidebar categories-->
 
 
-  <h3 class="sidebar-title">Recent Posts</h3>
+  <h3 class="sidebar-title"><?php esc_html( __('Recent Posts', 'gratuity') ); ?> </h3>
   <div class="sidebar-item recent-posts">
     <?php
         $args = [
@@ -45,7 +45,7 @@
     ?> 
                 <div class="post-item clearfix">
                     <!-- <img src="assets/img/blog/blog-recent-1.jpg" alt=""> -->
-                    <?php echo get_the_post_thumbnail($post['ID'], [80]); ?>
+                    <?php echo get_the_post_thumbnail($post['ID'], [80,80]); ?>
                     <h4><a href="<?php echo esc_url( get_permalink($post['ID']) ); ?>"><?php echo esc_html( $post['post_title'] ); ?></a></h4>
                     <time datetime="2020-01-01"><?php gratuity_post_on(); ?></time>
                 </div>
@@ -57,18 +57,20 @@
 
   <h3 class="sidebar-title">Tags</h3>
   <div class="sidebar-item tags">
+
     <ul>
-      <li><a href="#">App</a></li>
-      <li><a href="#">IT</a></li>
-      <li><a href="#">Business</a></li>
-      <li><a href="#">Mac</a></li>
-      <li><a href="#">Design</a></li>
-      <li><a href="#">Office</a></li>
-      <li><a href="#">Creative</a></li>
-      <li><a href="#">Studio</a></li>
-      <li><a href="#">Smart</a></li>
-      <li><a href="#">Tips</a></li>
-      <li><a href="#">Marketing</a></li>
+        <?php
+            $tag_args = [
+                'number'    => 5,
+            ];
+
+            $tags = get_tags();
+
+            foreach( $tags as $tag ){
+                echo '<li><a href="'.esc_url( get_tag_link($tag->term_id) ).'">'. ucfirst($tag->name).'</a></li>';
+            }
+        ?>
+
     </ul>
   </div><!-- End sidebar tags-->
 
