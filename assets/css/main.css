@@ -2124,3 +2124,9 @@ section {
   color: #fff;
   text-decoration: none;
 }
+
+/* extra css by Fazle Bari */
+
+.blog .sidebar .recent-posts time.updated{
+  visibility: hidden;
+}

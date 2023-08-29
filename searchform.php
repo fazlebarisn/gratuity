@@ -13,6 +13,6 @@
         name="s"
         aria-label="search"
         placeholder="<?php echo esc_attr_x('Search', 'placeholder', 'gratuity'); ?>">
-      <button type="submit"><i class="bi bi-search"></i></button>
+      <button type="submit"><i class="bi bi-search"></i><?php echo esc_attr_x('Search', 'search', 'gratuity') ?></button>
     </form>
 </div><!-- End sidebar search formn-->
