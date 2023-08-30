@@ -54,8 +54,8 @@
 
   <!-- ======= Hero Section ======= -->
   <?php 
-  // dd(is_home() && is_front_page() );
-  if( is_home() && is_front_page() ){
+  // dd(is_front_page() );
+  if( is_front_page() ){
     get_template_part( "template-parts/header/hero" );
   }
   ?>
