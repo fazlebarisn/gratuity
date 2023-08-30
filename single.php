@@ -5,6 +5,7 @@
 */
 
 get_header();
+
 ?>
 <section id="blog" class="blog">
 <div class="container" data-aos="fade-up">

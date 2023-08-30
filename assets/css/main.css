@@ -1455,9 +1455,9 @@ section {
 /*--------------------------------------------------------------
 # Blog
 --------------------------------------------------------------*/
-.blog {
+/* .blog {
   padding: 40px 0 20px 0;
-}
+} */
 
 .blog .entry {
   padding: 30px;
@@ -2129,4 +2129,10 @@ section {
 
 .blog .sidebar .recent-posts time.updated{
   visibility: hidden;
+}
+.logged-in.admin-bar .gratuity{
+  margin-top: 25px;
+}
+.gratuity-blog{
+  padding: 40px 0 20px 0;
 }
