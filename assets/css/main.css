@@ -1455,9 +1455,9 @@ section {
 /*--------------------------------------------------------------
 # Blog
 --------------------------------------------------------------*/
-.blog {
+/* .blog {
   padding: 40px 0 20px 0;
-}
+} */
 
 .blog .entry {
   padding: 30px;
@@ -1837,6 +1837,7 @@ section {
   position: relative;
 }
 
+.blog .sidebar .search-form form input[type=search],
 .blog .sidebar .search-form form input[type=text] {
   border: 0;
   padding: 4px;
@@ -2122,4 +2123,16 @@ section {
   background: #e03a3c;
   color: #fff;
   text-decoration: none;
+}
+
+/* extra css by Fazle Bari */
+
+.blog .sidebar .recent-posts time.updated{
+  visibility: hidden;
+}
+.logged-in.admin-bar .gratuity{
+  margin-top: 25px;
+}
+.gratuity-blog{
+  padding: 40px 0 20px 0;
 }

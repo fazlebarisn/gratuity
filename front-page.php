@@ -1,14 +1,12 @@
 <?php
 /** 
-* Main template file
+* Front page template file
 * @package gratuity
 */
+ get_header(); 
 ?>
 
-<?php get_header(); ?>
-
-    <!-- ======= Blog Section ======= -->
-    <section id="blog" class="blog">
+<section id="blog" class="blog">
       <div class="container" data-aos="fade-up">
 
         <div class="row">
@@ -31,7 +29,4 @@
       </div>
     </section><!-- End Blog Section -->
 
-
 <?php get_footer(); ?>
-
-

@@ -27,7 +27,7 @@ function get_the_post_custom_thumbnail( $post_id, $size = 'featured-thumbnail', 
             get_post_thumbnail_id(),
             $size,
             false,
-            $additional_attributes
+            $attributes
         );
     }
 
@@ -50,6 +50,7 @@ function gratuity_post_on(){
     /**
      * check if the post publish date and modify date not same
      * second <time> tag only for seo. We will hide second time section by css
+     * <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
      */
     if( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ){
         $time_string = '<time class="entry-date publish" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -66,22 +67,41 @@ function gratuity_post_on(){
 
     // inject the $time_string 
     $post_on = sprintf(
-        esc_html_x( 'Post On %s', 'post date', 'hadudu'),
+        esc_html_x( '%s', 'post date', 'gratuity'),
         '<a href="'.esc_url(get_the_permalink()).'" rel="bookmark">' .$time_string.'</a>'
     );
 
-    echo '<span class="posted-on text-secondary">'. $post_on.'</span>';
+    echo '<li class="d-flex align-items-center"><i class="bi bi-clock"></i>'. $post_on.'</li>';
 }
 
 /**
  * To display post author name 
+ * 
  */
 function gratuity_posted_by(){
     $byline = sprintf(
-        esc_html_x( ' By %s', 'post author', 'hadudu' ),
-        '<span class="author vcard"><a href="'. esc_url( get_author_posts_url( get_the_author_meta('ID')) ) .'">' . esc_html( get_the_author() ) . '</a></span>'
+        esc_html_x( '%s', 'post author', 'gratuity' ),
+        '<a href="'. esc_url( get_author_posts_url( get_the_author_meta('ID')) ) .'">' . esc_html( get_the_author() ) . '</a>'
     );
-    echo '<span class="byline text-secondary">' . $byline . '</span>';
+    echo '<li class="d-flex align-items-center"><i class="bi bi-person"></i>' .$byline . '</li>';
+}
+
+function gratuity_post_comment(){
+    $comment_number = get_comments_number();
+
+    if( 0 == $comment_number ){
+        $comment_number = __('No Comment', 'gratuity');
+    }elseif( 1 == $comment_number ){
+        $comment_number = $comment_number . __(' Comment', 'gratuity');
+    }else{
+        $comment_number = $comment_number . __(' Comments', 'gratuity');
+    }
+
+    $display_comment = sprintf(
+        esc_html_x( '%s', 'post comments', 'gratuity'),
+        '<a href="'.esc_url(get_the_permalink()).'" rel="bookmark">' .$comment_number.'</a>'
+    );
+    echo '<li class="d-flex align-items-center"><i class="bi bi-chat-dots">'.$display_comment.'</i>';
 }
 
 /**
@@ -107,7 +127,7 @@ function gratuity_the_excerpt( $trim_character_count = 0 ){
 function gratuity_excerpt_more( $more = '' ){
     if( ! is_single() ){
         $more = sprintf(
-            '<a class="hadudu-read-more text-white" href="%1$s"><button class="mt-2 btn btn-info">%2$s</button></a>',
+            '<div class="read-more"><a href="%1$s">%2$s</a></div>',
             get_permalink( get_the_ID() ),
             __('Read More', 'hadudu'),
         );
@@ -117,6 +137,7 @@ function gratuity_excerpt_more( $more = '' ){
 
 /**
  * For pagination
+ * Not as template, need to work leater
  */
 function gratuity_pagination(){
 
@@ -132,8 +153,22 @@ function gratuity_pagination(){
 
     $args = [
         'before_page_number' => '<span class="btn border border-secondary mr-2 mb-2">',
-        'after_page_number' => '</span>'
+        'after_page_number' => '</span>',
+        'prev_next'         => false,
     ];
     
     printf('<nav class="hadudu-pagination clearfix">%s</nav>', wp_kses( paginate_links($args), $allowed_tags ));
 }
+
+
+/** 
+ * Template original markup
+ *
+<div class="blog-pagination">
+<ul class="justify-content-center">
+  <li><a href="#">1</a></li>
+  <li class="active"><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+</ul>
+</div>
+*/

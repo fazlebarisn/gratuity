@@ -4,6 +4,7 @@
 * @package gratuity
 */
 ?>
+</main>
   <!-- ======= Footer ======= -->
   <footer id="footer">
 

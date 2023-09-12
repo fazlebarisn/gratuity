@@ -29,7 +29,7 @@
       }
   ?>
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
+  <header id="header" class="fixed-top d-flex align-items-center gratuity">
     <div class="container d-flex align-items-center">
       <!-- <h1 class="logo me-auto"><a href="index.html">Presento<span>.</span></a></h1> -->
       <?php
@@ -53,5 +53,16 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <?php get_template_part( "template-parts/header/hero" ) ?>
+  <?php 
+  // dd(is_front_page() );
+  if( is_front_page() ){
+    get_template_part( "template-parts/header/hero" );
+  }
+  ?>
   <!-- End Hero -->
+  <main id="main">
+  <?php
+  if(  ! is_front_page() ){
+    get_template_part('template-parts/header/breadcrumbs');
+  }
+  ?>
